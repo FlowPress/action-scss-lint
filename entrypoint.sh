@@ -6,10 +6,7 @@ npm install -g sass-lint
 pwd
 cd wp-content/themes/
 pwd
-latest_modified_theme_file=$(find . -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" ")
-IFS='/' read -ra latest_modified_theme_file <<< "$latest_modified_theme_file"
-echo ${latest_modified_theme_file[1]}
-cd ${latest_modified_theme_file[1]}
+cd "$(dirname "$(find . -type f -name "".scss-lint.yml | head -1)")"
 pwd
 # sass-lint --config .scss-lint.yml **/*.scss  --verbose --no-exit
 
