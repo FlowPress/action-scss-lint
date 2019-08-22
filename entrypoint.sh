@@ -18,13 +18,15 @@ OUTPUT="$(sass-lint --config .scss-lint.yml **/*.scss  --verbose --no-exit)"
 echo 'output'
 echo "${OUTPUT}"
 
-echo 'multiline'
-MULTILINE=$(ls \
-   -1)
-echo "${MULTILINE}"
+# echo 'multiline'
+# MULTILINE=$(ls \	
+#    -1)
+# echo "${MULTILINE}"
 
 
-if [[ $OUTPUT == *"warning"* ]]; then
-	echo "SCSS Linting Failed";
+if [[ "$OUTPUT" == *"warning"* ]]; then
+	echo "SCSS Linting Failed.";
 	exit 1
+else 
+	echo "SCSS Passed."
 fi
