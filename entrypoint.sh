@@ -24,7 +24,7 @@ echo "${OUTPUT}"
 # echo "${MULTILINE}"
 
 
-if [[ "$OUTPUT" == *"warning"* ]]; then
+if [[ echo "$OUTPUT" | grep -zPo "${warning// /\\s+}" ]]; then
 	echo "SCSS Linting Failed.";
 	exit 1
 else 
