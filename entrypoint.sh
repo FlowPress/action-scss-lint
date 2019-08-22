@@ -18,13 +18,12 @@ OUTPUT="$(sass-lint --config .scss-lint.yml **/*.scss  --verbose --no-exit)"
 echo 'output'
 echo "${OUTPUT}"
 
-# echo 'multiline'
-# MULTILINE=$(ls \	
-#    -1)
-# echo "${MULTILINE}"
+single=(tr -d '\n' < $OUTPUT)
+
+echo $single
 
 
-if [[ echo "$OUTPUT" | grep -zPo "${warning// /\\s+}" ]]; then
+if [[ echo "$single" == *"warning"* ]]; then
 	echo "SCSS Linting Failed.";
 	exit 1
 else 
