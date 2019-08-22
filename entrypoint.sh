@@ -1,26 +1,22 @@
 #!/bin/sh
 
-set -e
-
-echo "test entryopint"
-
-
-
-node --version
-
-# apt-get update 
-
-npm --version
-
 npm install -g sass-lint 
 
-pwd
 
-ls -la
+pwd
+cd wp-content/themes/
+pwd
+latest_modified_theme_file=$(find . -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" ")
+IFS='/' read -ra latest_modified_theme_file <<< "$latest_modified_theme_file"
+echo ${latest_modified_theme_file[1]}
+cd ${latest_modified_theme_file[1]}
+pwd
+# sass-lint --config .scss-lint.yml **/*.scss  --verbose --no-exit
+
 
 # sass-lint --config .scss-lint.yml wp-content/themes/**/*.scss  --verbose --no-exit
 
-OUTPUT="$(sass-lint --config .scss-lint.yml wp-content/themes/**/*.scss  --verbose --no-exit)"
+OUTPUT="$(sass-lint --config .scss-lint.yml **/*.scss  --verbose --no-exit)"
 echo "${OUTPUT}"
 
 MULTILINE=$(ls \
