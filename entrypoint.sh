@@ -8,14 +8,16 @@ cd "$(dirname "$(find . -type f -name "".scss-lint.yml | head -1)")"
 
 OUTPUT="$(sass-lint --config .scss-lint.yml **/*.scss  --verbose --no-exit)"
 
-# echo "${OUTPUT}"
+echo "${OUTPUT}"
+
+echo '----';
 
 single="$(echo $OUTPUT  | tr '\n' ',')"
 
 echo '$single'
 echo $single
 
-if [[ $single == *"warning"* ]]; then
+if [[ "$single" == *"warning"* ]]; then
 	echo "SCSS Linting Failed."
 	exit 1
 else 
