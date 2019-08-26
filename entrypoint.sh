@@ -19,8 +19,8 @@ echo '----';
 
 single="$(echo $OUTPUT  | tr '\n' ',')"
 
-echo '$single'
-echo $single
+# echo '$single'
+# echo $single
 
 
 if [[ "${single}" == *"warning"* ]] ;then
