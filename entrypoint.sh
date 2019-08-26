@@ -26,5 +26,5 @@ echo $single
 if [[ "${single}" == *"warning"* ]] ;then
 
     echo "SCSS Linting Failed."
-	exit 1
+	# exit 1
 fi
