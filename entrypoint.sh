@@ -21,10 +21,8 @@ echo '----2';
 
 echo [[ "$single" == *"warning"* ]]
 
-if [[ "$single" == *"warning"* ]]; then
+if [[ $single == *"warning"* ]]; then
 	echo "SCSS Linting Failed."
 	exit 1
-else 
-	echo "SCSS Passed."
 fi
 
