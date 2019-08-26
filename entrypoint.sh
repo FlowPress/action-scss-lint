@@ -24,9 +24,14 @@ echo $single
 
 echo '----2';
 
-if [[ $single =~ "warning" ]]
-then
-	echo "SCSS Linting Failed."
+# if [[ $single =~ "warning" ]]
+# then
+# 	echo "SCSS Linting Failed."
+# 	exit 1
+# fi
+
+
+if grep -q warning <<<"$single"; then
+    echo "SCSS Linting Failed."
 	exit 1
 fi
-
