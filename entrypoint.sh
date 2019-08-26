@@ -15,7 +15,7 @@ single="$(echo $OUTPUT  | tr '\n' ',')"
 echo '$single'
 echo $single
 
-if [[ "$single" == *"warning"* ]]; then
+if [[ $single == *"warning"* ]]; then
 	echo "SCSS Linting Failed."
 	exit 1
 else 
