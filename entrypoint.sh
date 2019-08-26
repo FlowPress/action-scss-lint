@@ -10,6 +10,8 @@ OUTPUT="$(sass-lint --config .scss-lint.yml **/*.scss  --verbose --no-exit)"
 
 echo "${OUTPUT}"
 
+echo tr -d '\n' < $OUTPUT;
+
 single=(tr -d '\n' < $OUTPUT)
 
 if [[ echo "$single" == *"warning"* ]]; then
