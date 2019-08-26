@@ -29,7 +29,11 @@ echo '----2';
 # 	echo "SCSS Linting Failed."
 # 	exit 1
 # fi
+echo '----3';
 
+echo grep -q warning <<<"$single"
+
+echo '----4';
 
 if grep -q warning <<<"$single"; then
     echo "SCSS Linting Failed."
