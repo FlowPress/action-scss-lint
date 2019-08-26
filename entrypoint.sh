@@ -27,4 +27,8 @@ if [[ "${single}" == *"warning"* ]] ;then
 
     echo "SCSS Linting Failed."
 	# exit 1
+else 
+	echo "SCSS Linting Success."
 fi
+
+echo "test"
