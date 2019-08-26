@@ -1,3 +1,6 @@
+echo '$SHELL'
+echo "$SHELL"
+
 #!/bin/sh
 
 npm install -g sass-lint 
