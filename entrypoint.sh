@@ -15,7 +15,7 @@ echo "${OUTPUT}"
 single="$(echo $OUTPUT  | tr '\n' ',')"
 
 # echo '$single'
-# echo $single
+echo $single
 
 
 if [[ "${single}" == *"warning"* ]] ;then
@@ -27,3 +27,5 @@ else
 fi
 
 echo "test"
+
+exit 1
