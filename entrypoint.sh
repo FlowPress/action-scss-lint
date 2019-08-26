@@ -1,9 +1,4 @@
 #!/bin/sh
-echo '$SHELL'
-echo "$SHELL"
-echo $0
-
-
 
 npm install -g sass-lint 
 
@@ -15,7 +10,7 @@ OUTPUT="$(sass-lint --config .scss-lint.yml **/*.scss  --verbose --no-exit)"
 
 echo "${OUTPUT}"
 
-echo '----';
+# echo '----';
 
 single="$(echo $OUTPUT  | tr '\n' ',')"
 
