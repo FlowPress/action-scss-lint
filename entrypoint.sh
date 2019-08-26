@@ -1,5 +1,6 @@
 echo '$SHELL'
-echo "$SHELL"
+echo $0
+
 
 #!/bin/sh
 
