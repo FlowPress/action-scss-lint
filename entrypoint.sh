@@ -22,20 +22,9 @@ single="$(echo $OUTPUT  | tr '\n' ',')"
 echo '$single'
 echo $single
 
-echo '----2';
 
-# if [[ $single =~ "warning" ]]
-# then
-# 	echo "SCSS Linting Failed."
-# 	exit 1
-# fi
-echo '----3';
+if [[ "${single}" == *"warning"* ]] ;then
 
-echo grep -q warning <<<"$single"
-
-echo '----4';
-
-if grep -q warning <<<"$single"; then
     echo "SCSS Linting Failed."
 	exit 1
 fi
