@@ -10,9 +10,11 @@ OUTPUT="$(sass-lint --config .scss-lint.yml **/*.scss  --verbose --no-exit)"
 
 echo "${OUTPUT}"
 
-echo tr -d '\n' < $OUTPUT;
+echo "gg"
 
-single=(tr -d '\n' < $OUTPUT)
+tr
+
+single="$(tr -d '\n' < $OUTPUT)"
 
 if [[ echo "$single" == *"warning"* ]]; then
 	echo "SCSS Linting Failed."
@@ -20,3 +22,4 @@ if [[ echo "$single" == *"warning"* ]]; then
 else 
 	echo "SCSS Passed."
 fi
+
