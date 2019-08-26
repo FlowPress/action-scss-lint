@@ -14,7 +14,7 @@ echo "gg"
 
 tr
 
-single="$(tr -d '\n' < $OUTPUT)"
+single="$(tr -d '\n' < ${OUTPUT})"
 
 if [[ echo "$single" == *"warning"* ]]; then
 	echo "SCSS Linting Failed."
