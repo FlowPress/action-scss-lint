@@ -19,9 +19,7 @@ echo $single
 
 echo '----2';
 
-echo [[ "$single" == *"warning"* ]]
-
-if [[ $single == *"warning"* ]]; then
+if [[ $single =~ "warning" ]]
 	echo "SCSS Linting Failed."
 	exit 1
 fi
